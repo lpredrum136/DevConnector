@@ -1,0 +1,7 @@
+in default.json, the connection string to MongoDB must be "test" instead of "admin"
+that means
+{
+  "mongoURI": "mongodb+srv://lpredrum136:legolas136@devconnector-ywrbj.mongodb.net/test?retryWrites=true&w=majority"
+}
+
+or In the connection string, just change /admin over to your Database name. You don’t have to change the version.
