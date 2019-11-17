@@ -10,8 +10,8 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
 
 // @route   GET api/auth
-// @desc    Test route
-// @access  Private
+// @desc    Authenticate to check if user is logged in
+// @access  Public
 router.get('/', auth, async (req, res) => {
   // Add "auth" makes this route protected
   try {
@@ -25,7 +25,7 @@ router.get('/', auth, async (req, res) => {
 });
 
 // @route POST api/auth
-// @desc Authenicate user, login and get token
+// @desc Authenticate user, login and get token
 // @access Public
 router.post(
   '/',
