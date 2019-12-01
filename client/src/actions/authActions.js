@@ -4,7 +4,9 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
-  LOGIN_FAIL
+  LOGIN_FAIL,
+  LOGOUT,
+  CLEAR_PROFILE
 } from './types';
 import { setAlert } from './alertActions';
 import setAuthToken from '../utils/setAuthToken';
@@ -101,4 +103,14 @@ export const loginUser = userData => {
     }
   };
   return dispatchLoginUser;
+};
+
+// Logout / Clear Profile
+export const logout = () => {
+  const dispatchLogout = dispatch => {
+    dispatch({ type: CLEAR_PROFILE });
+    dispatch({ type: LOGOUT });
+  };
+
+  return dispatchLogout;
 };
