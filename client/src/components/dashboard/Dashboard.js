@@ -25,7 +25,7 @@ export default connect(mapStateToProps)(Dashboard);
 const Dashboard = ({ myAuth, myProfile, getCurrentProfile, deleteAccount }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
 
   return myProfile.loading && myProfile.profile === null ? (
     <Spinner />
@@ -43,7 +43,7 @@ const Dashboard = ({ myAuth, myProfile, getCurrentProfile, deleteAccount }) => {
           <Education myEducation={myProfile.profile.education} />
           <div className='my-2'>
             <button className='btn btn-danger' onClick={() => deleteAccount()}>
-              <i class='fas fa-user-slash'></i> Delete My Account
+              <i className='fas fa-user-slash'></i> Delete My Account
             </button>
           </div>
         </Fragment>
