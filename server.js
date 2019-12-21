@@ -15,10 +15,6 @@ connectDB();
 // Init middleware
 app.use(express.json({ extended: false })); //This is actually body-parser but now it's integrated into express
 
-app.get('/', (req, res) => {
-  res.send('API running');
-});
-
 // Define routes
 app.use('/api/users', users);
 app.use('/api/auth', auth);
