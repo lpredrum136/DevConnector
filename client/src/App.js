@@ -15,6 +15,8 @@ import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/authActions';
@@ -62,6 +64,8 @@ const App = () => {
               path='/add-education'
               component={AddEducation}
             />
+            <PrivateRoute exact path='/posts' component={Posts} />
+            <PrivateRoute exact path='/post/:postId' component={Post} />
             {/* </Switch> */}
             {/* Another way to do Protected Route is classic: if (myAuth.isAuthenticated) <Redirect to="login" />. See more in dashboard/Dashboard*/}
           </section>
